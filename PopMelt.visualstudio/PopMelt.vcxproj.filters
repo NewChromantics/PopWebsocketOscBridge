@@ -1,0 +1,149 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Dlls">
+      <UniqueIdentifier>{00d28bea-7c65-45f8-9136-3e217528d32f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source_Windows">
+      <UniqueIdentifier>{172035e9-29bf-4d87-9f19-109990049c02}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="PopMelt">
+      <UniqueIdentifier>{7185466c-17ba-4e53-8149-2ba3c4a070d9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="PopMelt\PopEngineCommon">
+      <UniqueIdentifier>{64e01687-e511-4100-935a-225f2dc517b0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="PopMelt\PopMelt">
+      <UniqueIdentifier>{cf58b7ee-726e-4476-89bc-bbbba0e91f3c}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\Source_Windows\Resource.h">
+      <Filter>Source_Windows</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source_Windows\TargetVer.h">
+      <Filter>Source_Windows</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\Source\Main.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="..\Source_Windows\PopMelt.rc">
+      <Filter>Source_Windows</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="..\Source_Windows\PopMelt.ico">
+      <Filter>Source_Windows</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <CopyFileToFolders Include="..\PopMelt\Noise.png" />
+    <CopyFileToFolders Include="..\PopMelt\TestEnvMapEquirect.jpg" />
+    <CopyFileToFolders Include="..\PopMelt\AssetManager.js" />
+    <CopyFileToFolders Include="..\PopMelt\bootup.js" />
+    <CopyFileToFolders Include="..\PopMelt\index.html" />
+    <CopyFileToFolders Include="..\PopMelt\Quad.vert.glsl" />
+    <CopyFileToFolders Include="..\PopMelt\SceneMarch.frag.glsl" />
+    <CopyFileToFolders Include="..\PopMelt\SceneTrace.frag.glsl" />
+    <CopyFileToFolders Include="..\PopMelt\PopEngineCommon\LICENSE.md">
+      <Filter>PopMelt\PopEngineCommon</Filter>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="..\PopMelt\PopEngineCommon\MemCheckLoop.js">
+      <Filter>PopMelt\PopEngineCommon</Filter>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="..\PopMelt\PopEngineCommon\ParamsWindow.js">
+      <Filter>PopMelt\PopEngineCommon</Filter>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="..\PopMelt\PopEngineCommon\PopApi.js">
+      <Filter>PopMelt\PopEngineCommon</Filter>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="..\PopMelt\PopEngineCommon\PopAruco.js">
+      <Filter>PopMelt\PopEngineCommon</Filter>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="..\PopMelt\PopEngineCommon\PopCamera.js">
+      <Filter>PopMelt\PopEngineCommon</Filter>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="..\PopMelt\PopEngineCommon\PopCinema4d.js">
+      <Filter>PopMelt\PopEngineCommon</Filter>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="..\PopMelt\PopEngineCommon\PopCollada.js">
+      <Filter>PopMelt\PopEngineCommon</Filter>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="..\PopMelt\PopEngineCommon\PopDll.js">
+      <Filter>PopMelt\PopEngineCommon</Filter>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="..\PopMelt\PopEngineCommon\PopFrameCounter.js">
+      <Filter>PopMelt\PopEngineCommon</Filter>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="..\PopMelt\PopEngineCommon\PopH264.js">
+      <Filter>PopMelt\PopEngineCommon</Filter>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="..\PopMelt\PopEngineCommon\PopMath.js">
+      <Filter>PopMelt\PopEngineCommon</Filter>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="..\PopMelt\PopEngineCommon\PopMedia.js">
+      <Filter>PopMelt\PopEngineCommon</Filter>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="..\PopMelt\PopEngineCommon\PopMp4.js">
+      <Filter>PopMelt\PopEngineCommon</Filter>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="..\PopMelt\PopEngineCommon\PopObj.js">
+      <Filter>PopMelt\PopEngineCommon</Filter>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="..\PopMelt\PopEngineCommon\PopPly.js">
+      <Filter>PopMelt\PopEngineCommon</Filter>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="..\PopMelt\PopEngineCommon\PopShaderCache.js">
+      <Filter>PopMelt\PopEngineCommon</Filter>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="..\PopMelt\PopEngineCommon\PopSvg.js">
+      <Filter>PopMelt\PopEngineCommon</Filter>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="..\PopMelt\PopEngineCommon\PopTexture.js">
+      <Filter>PopMelt\PopEngineCommon</Filter>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="..\PopMelt\PopEngineCommon\PopWebApi.js">
+      <Filter>PopMelt\PopEngineCommon</Filter>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="..\PopMelt\PopEngineCommon\PopWebGuiApi.js">
+      <Filter>PopMelt\PopEngineCommon</Filter>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="..\PopMelt\PopEngineCommon\PopWebImageApi.js">
+      <Filter>PopMelt\PopEngineCommon</Filter>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="..\PopMelt\PopEngineCommon\PopWebOpenglApi.js">
+      <Filter>PopMelt\PopEngineCommon</Filter>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="..\PopMelt\PopEngineCommon\PopWebSocketApi.js">
+      <Filter>PopMelt\PopEngineCommon</Filter>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="..\PopMelt\PopEngineCommon\PopWebXrApi.js">
+      <Filter>PopMelt\PopEngineCommon</Filter>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="..\PopMelt\PopEngineCommon\PromiseQueue.js">
+      <Filter>PopMelt\PopEngineCommon</Filter>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="..\PopMelt\PopEngineCommon\Readme.md">
+      <Filter>PopMelt\PopEngineCommon</Filter>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="..\Build\PopEngine_Debug_Chakra_x64\PopEngine.dll">
+      <Filter>Dlls</Filter>
+    </CopyFileToFolders>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\Source_Windows\openvr_api.dll">
+      <Filter>Dlls</Filter>
+    </None>
+    <None Include="..\Source_Windows\PopCameraDevice.dll">
+      <Filter>Dlls</Filter>
+    </None>
+  </ItemGroup>
+</Project>
