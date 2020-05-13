@@ -1,0 +1,18 @@
+# dont commit libraries
+*.framework/
+
+# user data
+xcuserdata/
+
+# temp build files
+*.visualstudio/packages/
+*.visualstudio/*_Debug/
+*.visualstudio/*_Debug_Chakra/
+Build/
+
+*.user
+
+*.visualstudio/.vs/
+
+*.aps
+
