@@ -143,7 +143,16 @@ function EncodeOscMessage(Address,Floats,Ints)
 
 function SendWebsocketToOscMessage(Message)
 {
-	const Packet = EncodeOscMessage('/foo',[123.45],[1,2,3]);
+	let Object = JSON.parse(Message.Data);
+	if ( !Object.Address )
+		throw `Websocket message ${Message.Data} missing .Address`;
+	
+	if ( Object.Address[0] != '/' )
+		Object.Address = '/' + Object.Address;
+	
+	//const Packet = EncodeOscMessage('/foo',[123.45],[1,2,3]);
+	const Packet = EncodeOscMessage(Object.Address,Object.Floats,Object.Ints);
+	//Pop.Debug("Websocket message",Message.Data);
 	WebsocketToOscQueue.Resolve(Packet);
 }
 
@@ -158,7 +167,7 @@ async function FloodTest()
 		SendWebsocketToOscMessage(Osc);
 	}
 }
-FloodTest().then().catch(Pop.Debug);
+//FloodTest().then().catch(Pop.Debug);
 				
 
 function SendOscToWebsocketMessage(Message)
@@ -175,19 +184,19 @@ async function WebsocketServerLoop(GetListenPort,OnRecvMessage,WaitForSendMessag
 		const Port = GetListenPort();
 		try
 		{
-			const Server = new Pop.Websocket.Server(Port);
-			//await Server.WaitForConnect();
-			Pop.Debug(`Webocket listening ${Port}; from`, JSON.stringify(Server.GetAddress()));
+			const Socket = new Pop.Websocket.Server(Port);
+			//await Socket.WaitForConnect();
+			Pop.Debug(`Webocket listening ${Port}; from`, JSON.stringify(Socket.GetAddress()));
 			
 			const SendLoop = async function()
 			{
 				while ( true )
 				{
 					const Message = await WaitForSendMessage();
-					const Peers = Server.GetPeers();
+					const Peers = Socket.GetPeers();
 					function Send(Peer)
 					{
-						Server.Send( Peer, Message );
+						Socket.Send( Peer, Message );
 					}
 					Peers.forEach(Send);
 				}
@@ -198,9 +207,19 @@ async function WebsocketServerLoop(GetListenPort,OnRecvMessage,WaitForSendMessag
 			
 			while ( true )
 			{
-				const Message = await Server.WaitForMessage();
-				OnRecvMessage(Message);
-				
+				const Message = await Socket.WaitForMessage();
+				try
+				{
+					OnRecvMessage(Message);
+				}
+				catch(e)
+				{
+					const Error = {};
+					Error.Error = e;
+					Pop.Debug(`Sending error ${e} back to peer ${Message.Peer}`);
+					Socket.Send(Message.Peer,JSON.stringify(Error));
+				}
+					
 				if ( SendError )
 					throw SendError;
 			}
