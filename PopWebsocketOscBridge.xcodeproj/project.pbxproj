@@ -1,0 +1,661 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		BF1826752422502D006FEB93 /* Main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BF1826742422502D006FEB93 /* Main.cpp */; };
+		BF64975D2440E3B900D71943 /* PopEngine_Osx.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF71CA9E243E4F8F00AEF50F /* PopEngine_Osx.framework */; };
+		BF64975E2440E3B900D71943 /* PopEngine_Osx.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = BF71CA9E243E4F8F00AEF50F /* PopEngine_Osx.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		BF71CAAF243E51A700AEF50F /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF71CAAE243E51A700AEF50F /* MainMenu.xib */; };
+		BF71CAC5243E575A00AEF50F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF71CAC3243E575A00AEF50F /* Main.storyboard */; settings = {ASSET_TAGS = (TextBox1, ); }; };
+		BF71CACA243E575F00AEF50F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF71CAC8243E575F00AEF50F /* LaunchScreen.storyboard */; };
+		BF71CADF243E57DD00AEF50F /* Main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BF1826742422502D006FEB93 /* Main.cpp */; };
+		BFB4D711243E71F30011CD78 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF71CAC1243E575900AEF50F /* ViewController.m */; };
+		BFB4D730243F28330011CD78 /* PopEngine_Ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF71CAA2243E4F8F00AEF50F /* PopEngine_Ios.framework */; };
+		BFB4D731243F28330011CD78 /* PopEngine_Ios.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BF71CAA2243E4F8F00AEF50F /* PopEngine_Ios.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		BFEF6A2A246BED7A000A1F88 /* PopWebsocketOscBridge in Resources */ = {isa = PBXBuildFile; fileRef = BFEF6A29246BED79000A1F88 /* PopWebsocketOscBridge */; };
+		BFEF6A2C246BEFCC000A1F88 /* Icons.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BFEF6A2B246BEFCC000A1F88 /* Icons.xcassets */; };
+		BFEF6A2D246BEFCC000A1F88 /* Icons.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BFEF6A2B246BEFCC000A1F88 /* Icons.xcassets */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		BF64975F2440E3B900D71943 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BF18267C2422505D006FEB93 /* PopEngine.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = BF5EAFB4237F0C100077BCF5;
+			remoteInfo = PopEngine_Osx;
+		};
+		BF71CA9D243E4F8F00AEF50F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BF18267C2422505D006FEB93 /* PopEngine.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = BF5EAFB5237F0C100077BCF5;
+			remoteInfo = PopEngine_Osx;
+		};
+		BF71CA9F243E4F8F00AEF50F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BF18267C2422505D006FEB93 /* PopEngine.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = BF5EB0542380335D0077BCF5;
+			remoteInfo = PopEngine;
+		};
+		BF71CAA1243E4F8F00AEF50F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BF18267C2422505D006FEB93 /* PopEngine.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = BF151F7623845F2E00A70EBF;
+			remoteInfo = PopEngine_Ios;
+		};
+		BF71CADC243E57B500AEF50F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BF18267C2422505D006FEB93 /* PopEngine.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = BF151F7523845F2E00A70EBF;
+			remoteInfo = PopEngine_Ios;
+		};
+		BFB4D732243F28330011CD78 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BF18267C2422505D006FEB93 /* PopEngine.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = BF151F7523845F2E00A70EBF;
+			remoteInfo = PopEngine_Ios;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		BF40CE1D2423DB8800F636EF /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				BF64975E2440E3B900D71943 /* PopEngine_Osx.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BF71CADE243E57B500AEF50F /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				BFB4D731243F28330011CD78 /* PopEngine_Ios.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		BF1826682422502B006FEB93 /* PopWebsocketOscBridge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PopWebsocketOscBridge.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BF1826732422502D006FEB93 /* Info_Osx.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info_Osx.plist; sourceTree = "<group>"; };
+		BF1826742422502D006FEB93 /* Main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Main.cpp; sourceTree = "<group>"; };
+		BF1826762422502D006FEB93 /* PopCave.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PopCave.entitlements; sourceTree = "<group>"; };
+		BF18267C2422505D006FEB93 /* PopEngine.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = PopEngine.xcodeproj; sourceTree = "<group>"; };
+		BF71CAAE243E51A700AEF50F /* MainMenu.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainMenu.xib; sourceTree = "<group>"; };
+		BF71CABB243E575900AEF50F /* PopWebsocketOscBridge_Ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PopWebsocketOscBridge_Ios.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BF71CAC0243E575900AEF50F /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		BF71CAC1243E575900AEF50F /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		BF71CAC4243E575A00AEF50F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		BF71CAC9243E575F00AEF50F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		BF71CACB243E575F00AEF50F /* Info_Ios.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info_Ios.plist; sourceTree = "<group>"; };
+		BFEF6A29246BED79000A1F88 /* PopWebsocketOscBridge */ = {isa = PBXFileReference; lastKnownFileType = folder; path = PopWebsocketOscBridge; sourceTree = "<group>"; };
+		BFEF6A2B246BEFCC000A1F88 /* Icons.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Icons.xcassets; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		BF1826652422502B006FEB93 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BF64975D2440E3B900D71943 /* PopEngine_Osx.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BF71CAB8243E575900AEF50F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BFB4D730243F28330011CD78 /* PopEngine_Ios.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		BF18265F2422502B006FEB93 = {
+			isa = PBXGroup;
+			children = (
+				BFEF6A29246BED79000A1F88 /* PopWebsocketOscBridge */,
+				BF71CA95243E4F6400AEF50F /* PopEngine */,
+				BF71CABC243E575900AEF50F /* Source_Ios */,
+				BF18268C24225109006FEB93 /* Frameworks */,
+				BF40CE172423D7F200F636EF /* Source */,
+				BF18266A2422502B006FEB93 /* Source_Osx */,
+				BF1826692422502B006FEB93 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		BF1826692422502B006FEB93 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				BF1826682422502B006FEB93 /* PopWebsocketOscBridge.app */,
+				BF71CABB243E575900AEF50F /* PopWebsocketOscBridge_Ios.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		BF18266A2422502B006FEB93 /* Source_Osx */ = {
+			isa = PBXGroup;
+			children = (
+				BF1826732422502D006FEB93 /* Info_Osx.plist */,
+				BF71CAAE243E51A700AEF50F /* MainMenu.xib */,
+				BF1826762422502D006FEB93 /* PopCave.entitlements */,
+				BFEF6A2B246BEFCC000A1F88 /* Icons.xcassets */,
+			);
+			path = Source_Osx;
+			sourceTree = "<group>";
+		};
+		BF18268C24225109006FEB93 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BF40CE172423D7F200F636EF /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				BF1826742422502D006FEB93 /* Main.cpp */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
+		BF71CA95243E4F6400AEF50F /* PopEngine */ = {
+			isa = PBXGroup;
+			children = (
+				BF18267C2422505D006FEB93 /* PopEngine.xcodeproj */,
+			);
+			name = PopEngine;
+			path = ../PopEngine;
+			sourceTree = SOURCE_ROOT;
+		};
+		BF71CA97243E4F8F00AEF50F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				BF71CA9E243E4F8F00AEF50F /* PopEngine_Osx.framework */,
+				BF71CAA0243E4F8F00AEF50F /* PopEngine.app */,
+				BF71CAA2243E4F8F00AEF50F /* PopEngine_Ios.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		BF71CABC243E575900AEF50F /* Source_Ios */ = {
+			isa = PBXGroup;
+			children = (
+				BF71CAC0243E575900AEF50F /* ViewController.h */,
+				BF71CAC1243E575900AEF50F /* ViewController.m */,
+				BF71CAC3243E575A00AEF50F /* Main.storyboard */,
+				BF71CAC8243E575F00AEF50F /* LaunchScreen.storyboard */,
+				BF71CACB243E575F00AEF50F /* Info_Ios.plist */,
+			);
+			path = Source_Ios;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		BF1826C42423CF77006FEB93 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		BF1826672422502B006FEB93 /* PopWebsocketOscBridge */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BF1826792422502D006FEB93 /* Build configuration list for PBXNativeTarget "PopWebsocketOscBridge" */;
+			buildPhases = (
+				BF1826C42423CF77006FEB93 /* Headers */,
+				BF1826642422502B006FEB93 /* Sources */,
+				BF1826652422502B006FEB93 /* Frameworks */,
+				BF1826662422502B006FEB93 /* Resources */,
+				BF40CE1D2423DB8800F636EF /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BF6497602440E3B900D71943 /* PBXTargetDependency */,
+			);
+			name = PopWebsocketOscBridge;
+			productName = PopKandinsky;
+			productReference = BF1826682422502B006FEB93 /* PopWebsocketOscBridge.app */;
+			productType = "com.apple.product-type.application";
+		};
+		BF71CABA243E575900AEF50F /* PopWebsocketOscBridge_Ios */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BF71CAD3243E575F00AEF50F /* Build configuration list for PBXNativeTarget "PopWebsocketOscBridge_Ios" */;
+			buildPhases = (
+				BF71CAB7243E575900AEF50F /* Sources */,
+				BF71CAB8243E575900AEF50F /* Frameworks */,
+				BF71CAB9243E575900AEF50F /* Resources */,
+				BF71CADE243E57B500AEF50F /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BF71CADD243E57B500AEF50F /* PBXTargetDependency */,
+				BFB4D733243F28330011CD78 /* PBXTargetDependency */,
+			);
+			name = PopWebsocketOscBridge_Ios;
+			productName = PopCave_Ios;
+			productReference = BF71CABB243E575900AEF50F /* PopWebsocketOscBridge_Ios.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BF1826602422502B006FEB93 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				KnownAssetTags = (
+					TextBox1,
+				);
+				LastUpgradeCheck = 1010;
+				ORGANIZATIONNAME = NewChromantics;
+				TargetAttributes = {
+					BF1826672422502B006FEB93 = {
+						CreatedOnToolsVersion = 10.1;
+					};
+					BF71CABA243E575900AEF50F = {
+						CreatedOnToolsVersion = 10.1;
+					};
+				};
+			};
+			buildConfigurationList = BF1826632422502B006FEB93 /* Build configuration list for PBXProject "PopWebsocketOscBridge" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = BF18265F2422502B006FEB93;
+			productRefGroup = BF1826692422502B006FEB93 /* Products */;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = BF71CA97243E4F8F00AEF50F /* Products */;
+					ProjectRef = BF18267C2422505D006FEB93 /* PopEngine.xcodeproj */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				BF1826672422502B006FEB93 /* PopWebsocketOscBridge */,
+				BF71CABA243E575900AEF50F /* PopWebsocketOscBridge_Ios */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		BF71CA9E243E4F8F00AEF50F /* PopEngine_Osx.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = PopEngine_Osx.framework;
+			remoteRef = BF71CA9D243E4F8F00AEF50F /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		BF71CAA0243E4F8F00AEF50F /* PopEngine.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = PopEngine.app;
+			remoteRef = BF71CA9F243E4F8F00AEF50F /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		BF71CAA2243E4F8F00AEF50F /* PopEngine_Ios.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = PopEngine_Ios.framework;
+			remoteRef = BF71CAA1243E4F8F00AEF50F /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
+/* Begin PBXResourcesBuildPhase section */
+		BF1826662422502B006FEB93 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BFEF6A2A246BED7A000A1F88 /* PopWebsocketOscBridge in Resources */,
+				BFEF6A2C246BEFCC000A1F88 /* Icons.xcassets in Resources */,
+				BF71CAAF243E51A700AEF50F /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BF71CAB9243E575900AEF50F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BF71CACA243E575F00AEF50F /* LaunchScreen.storyboard in Resources */,
+				BFEF6A2D246BEFCC000A1F88 /* Icons.xcassets in Resources */,
+				BF71CAC5243E575A00AEF50F /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		BF1826642422502B006FEB93 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BF1826752422502D006FEB93 /* Main.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BF71CAB7243E575900AEF50F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BFB4D711243E71F30011CD78 /* ViewController.m in Sources */,
+				BF71CADF243E57DD00AEF50F /* Main.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		BF6497602440E3B900D71943 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = PopEngine_Osx;
+			targetProxy = BF64975F2440E3B900D71943 /* PBXContainerItemProxy */;
+		};
+		BF71CADD243E57B500AEF50F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = PopEngine_Ios;
+			targetProxy = BF71CADC243E57B500AEF50F /* PBXContainerItemProxy */;
+		};
+		BFB4D733243F28330011CD78 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = PopEngine_Ios;
+			targetProxy = BFB4D732243F28330011CD78 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		BF71CAC3243E575A00AEF50F /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BF71CAC4243E575A00AEF50F /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		BF71CAC8243E575F00AEF50F /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BF71CAC9243E575F00AEF50F /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		BF1826772422502D006FEB93 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)",
+					"$(POPENGINE_DIR)/src/Libs/**",
+				);
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "$(BUILD_DIR)/Debug_JavascriptCore";
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				POPENGINE_DIR = "$(PROJECT_DIR)/../PopEngine";
+				POPENGINE_FRAMEWORKS_DIR = "${BUILD_PRODUCTS_DIR}";
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		BF1826782422502D006FEB93 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)",
+					"$(POPENGINE_DIR)/src/Libs/**",
+				);
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "$(BUILD_DIR)/Debug_JavascriptCore";
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				POPENGINE_DIR = "$(PROJECT_DIR)/../PopEngine";
+				POPENGINE_FRAMEWORKS_DIR = "${BUILD_PRODUCTS_DIR}";
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		BF18267A2422502D006FEB93 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Source_Osx/PopCave.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 2HGDT7H2KX;
+				HEADER_SEARCH_PATHS = (
+					"$(BUILD_DIR)/Debug_JavascriptCore/**",
+					"$(BUILD_DIR)/Debug_JavascriptCore/PopEngine_Osx.framework/Headers",
+				);
+				INFOPLIST_FILE = "$(SRCROOT)/Source_Osx/Info_Osx.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.NewChromantics.PopWebsocketOscBridge;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		BF18267B2422502D006FEB93 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Source_Osx/PopCave.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 2HGDT7H2KX;
+				HEADER_SEARCH_PATHS = (
+					"$(BUILD_DIR)/Debug_JavascriptCore/**",
+					"$(BUILD_DIR)/Debug_JavascriptCore/PopEngine_Osx.framework/Headers",
+				);
+				INFOPLIST_FILE = "$(SRCROOT)/Source_Osx/Info_Osx.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.NewChromantics.PopWebsocketOscBridge;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		BF71CACE243E575F00AEF50F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon_Ios;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = 2HGDT7H2KX;
+				ENABLE_BITCODE = NO;
+				HEADER_SEARCH_PATHS = "$(BUILD_DIR)/Debug_JavascriptCore-iphoneos/PopEngine_Ios.framework/Headers/**";
+				INFOPLIST_FILE = "$(SRCROOT)/Source_Ios/Info_Ios.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.NewChromantics.PopCap;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		BF71CACF243E575F00AEF50F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon_Ios;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2HGDT7H2KX;
+				ENABLE_BITCODE = NO;
+				HEADER_SEARCH_PATHS = "$(BUILD_DIR)/Debug_JavascriptCore-iphoneos/PopEngine_Ios.framework/Headers/**";
+				INFOPLIST_FILE = "$(SRCROOT)/Source_Ios/Info_Ios.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.NewChromantics.PopCap;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		BF1826632422502B006FEB93 /* Build configuration list for PBXProject "PopWebsocketOscBridge" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BF1826772422502D006FEB93 /* Debug */,
+				BF1826782422502D006FEB93 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BF1826792422502D006FEB93 /* Build configuration list for PBXNativeTarget "PopWebsocketOscBridge" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BF18267A2422502D006FEB93 /* Debug */,
+				BF18267B2422502D006FEB93 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BF71CAD3243E575F00AEF50F /* Build configuration list for PBXNativeTarget "PopWebsocketOscBridge_Ios" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BF71CACE243E575F00AEF50F /* Debug */,
+				BF71CACF243E575F00AEF50F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BF1826602422502B006FEB93 /* Project object */;
+}
