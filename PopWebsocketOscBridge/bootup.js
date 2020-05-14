@@ -172,6 +172,8 @@ async function FloodTest()
 
 function SendOscToWebsocketMessage(Message)
 {
+	Message = String.fromCharCode(...Message.Data);
+	//Message = JSON.stringify(Message);
 	Pop.Debug(`OSC: ${Message}`);
 	//	put in queue
 	OscToWebsocketQueue.Resolve(Message);
@@ -288,6 +290,63 @@ async function UdpClientLoop(GetConnectAddress,OnRecvMessage,WaitForSendMessage)
 	}
 }
 
+
+async function UdpServerLoop(GetListenPort,OnRecvMessage,WaitForSendMessage)
+{
+	while(true)
+	{
+		const Port = GetListenPort();
+		try
+		{
+			const Socket = new Pop.Socket.UdpServer(Port);
+			//await Socket.WaitForConnect();
+			Pop.Debug(`Udp listening ${Port}; from`, JSON.stringify(Socket.GetAddress()));
+			
+			const SendLoop = async function()
+			{
+				while ( true )
+				{
+					const Message = await WaitForSendMessage();
+					const Peers = Socket.GetPeers();
+					Pop.Debug(`Sending ${Message} to Peers ${Peers}`);
+					function Send(Peer)
+					{
+						try
+						{
+							const Type = typeof Message;
+							Pop.Debug(`Sending ${Message}(${Type}) to ${Peer}`);
+							Socket.Send( Peer, Message );
+						}
+						catch(e)
+						{
+							Pop.Debug(`Send error ${e}`);
+						}
+					}
+					Peers.forEach(Send);
+				}
+			}
+			let SendError = null;
+			//	start the send loop
+			SendLoop().then().catch(Pop.Debug);// e => SendError = e );
+			
+			while ( true )
+			{
+				const Message = await Socket.WaitForMessage();
+				OnRecvMessage(Message);
+				
+				if ( SendError )
+					throw SendError;
+			}
+		}
+		catch(e)
+		{
+			Pop.Debug(`udp[${Port}] loop error; ${e}`);
+			await Pop.Yield(1000);
+		}
+	}
+}
+
+
 function GetNextWebsocketPort()
 {
 	return 8080;
@@ -298,8 +357,14 @@ function GetNextUdpAddress()
 	return ['localhost',9999];//63803];
 }
 
+function GetNextUdpPort()
+{
+	return 9999;
+}
+
 
 
 WebsocketServerLoop(GetNextWebsocketPort,SendWebsocketToOscMessage,WaitForOscToWebsocketMessage).then(Pop.Debug).catch(Pop.Debug);
 UdpClientLoop(GetNextUdpAddress,SendOscToWebsocketMessage,WaitForWebsocketToOscMessage).then(Pop.Debug).catch(Pop.Debug);
+UdpServerLoop(GetNextUdpPort,SendOscToWebsocketMessage,WaitForWebsocketToOscMessage).then(Pop.Debug).catch(Pop.Debug);
 
