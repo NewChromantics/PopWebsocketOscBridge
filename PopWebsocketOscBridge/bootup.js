@@ -31,6 +31,50 @@ Pop.Debug = function()
 	OldDebug( DebugString );
 }
 
+
+
+//	gr: really for testing TouchOSC
+const OscAddressRemap = {};
+OscAddressRemap['/1/rotaryA'] = '/Volume0';
+OscAddressRemap['/1/rotaryB'] = '/Volume1';
+OscAddressRemap['/1/rotaryC'] = '/Volume2';
+OscAddressRemap['/1/rotaryD'] = '/Volume3';
+OscAddressRemap['/1/faderA'] = '/Volume4';
+OscAddressRemap['/1/faderB'] = '/Volume5';
+OscAddressRemap['/1/multifaderM/1'] = '/Volume6';
+OscAddressRemap['/1/multifaderM/2'] = '/Volume7';
+OscAddressRemap['/1/multifaderM/3'] = '/Volume8';
+OscAddressRemap['/1/multifaderM/4'] = '/Volume9';
+OscAddressRemap['/1/faderC'] = '/Volume8';
+OscAddressRemap['/1/faderD'] = '/Volume9';
+
+
+function GetNextWebsocketPort()
+{
+	return 8080;
+}
+
+function GetNextUdpAddress()
+{
+	return ['localhost',9999];//63803];
+}
+
+function GetNextUdpPort()
+{
+	return 9999;
+}
+
+
+
+
+
+
+
+
+
+
+
+
 //	todo: promise queue with buffer
 const OscToWebsocketQueue = new PromiseQueue();
 const WebsocketToOscQueue = new PromiseQueue();
@@ -47,7 +91,8 @@ async function WaitForWebsocketToOscMessage()
 	return WebsocketToOscQueue.Allocate();
 }
 
-function EncodeOscMessage(Address,Floats,Ints)
+Pop.Osc = {};
+Pop.Osc.EncodeMessage = function(Address,Floats,Ints)
 {
 	let Packet = [];
 	
@@ -141,6 +186,96 @@ function EncodeOscMessage(Address,Floats,Ints)
 	return Packet;
 }
 
+
+Pop.Osc.DecodeMessages = function(Bytes,MapAddress)
+{
+	MapAddress = MapAddress || function(Key){	return Key;	};
+
+	let Read = 0;
+	function PopChunk()
+	{
+		if ( Read >= Bytes.length )
+			return null;
+		const Data = Bytes.slice( Read, Read+4 );
+		Read+=4;
+		return Array.from(Data);
+	}
+	
+	function PopString()
+	{
+		//	read chunks until we get one with padding terminators
+		let StringValue = null;
+		
+		while ( true )
+		{
+			//	get next 4 bytes & cut off padding
+			let Chunk = PopChunk();
+			if ( Chunk === null )
+				return StringValue;		//	check this isn't half way through?
+			while ( Chunk.length && Chunk[Chunk.length-1] == 0 )
+				Chunk.pop();
+			//	if there was padding, it was the last part
+			const HadPadding = Chunk.length != 4;
+			if ( StringValue === null )
+				StringValue = "";
+			StringValue += String.fromCharCode(...Chunk);
+			if ( HadPadding )
+				break;
+		}
+		return StringValue;
+	}
+	
+	function PopFloat()
+	{
+		const Bytes = new Uint8Array( PopChunk().reverse() );
+		const Floats = new Float32Array( Bytes.buffer );
+		const Float = Floats[0];
+		return Float;
+	}
+	
+	let OscValues = {};
+	function PushOscMessage(Address,Values)
+	{
+		Address = MapAddress(Address);
+		OscValues[Address] = Values;
+	}
+	
+	//	read through values
+	while ( true )
+	{
+		//	get address
+		const Address = PopString();
+		if ( Address === null )
+			break;
+		if ( Address[0] != '/' )
+			throw `Expecting address (${Address}) to start with /`;
+
+		//	get type description
+		const TypeDescription = PopString();
+		if ( TypeDescription[0] != ',' )
+			throw `Expecting TypeDescription (${TypeDescription}) to start with ,`;
+
+		//	grab the values we're expecting
+		let Values = [];
+		for ( let i=1;	i<TypeDescription.length;	i++ )
+		{
+			const Type = TypeDescription[i];
+			if ( Type == 'f' )
+				Values.push( PopFloat() );
+			else if ( Type == 'i' )
+				Values.push( PopInt32() );
+			else
+				throw `Unknown type ${Type} (from ${Address} in ${TypeDescription})`;
+		}
+		PushOscMessage( Address, Values );
+	}
+	
+	//Message = String.fromCharCode(...Message.Data);
+	return OscValues;
+}
+
+
+
 function SendWebsocketToOscMessage(Message)
 {
 	let Object = JSON.parse(Message.Data);
@@ -151,7 +286,7 @@ function SendWebsocketToOscMessage(Message)
 		Object.Address = '/' + Object.Address;
 	
 	//const Packet = EncodeOscMessage('/foo',[123.45],[1,2,3]);
-	const Packet = EncodeOscMessage(Object.Address,Object.Floats,Object.Ints);
+	const Packet = Pop.Osc.EncodeMessage(Object.Address,Object.Floats,Object.Ints);
 	//Pop.Debug("Websocket message",Message.Data);
 	WebsocketToOscQueue.Resolve(Packet);
 }
@@ -172,11 +307,24 @@ async function FloodTest()
 
 function SendOscToWebsocketMessage(Message)
 {
-	Message = String.fromCharCode(...Message.Data);
-	//Message = JSON.stringify(Message);
-	Pop.Debug(`OSC: ${Message}`);
-	//	put in queue
-	OscToWebsocketQueue.Resolve(Message);
+	function RemapAddress(Address)
+	{
+		if ( OscAddressRemap.hasOwnProperty(Address) )
+			return OscAddressRemap[Address];
+		return Address;
+	}
+	
+	try
+	{
+		const OscValues = Pop.Osc.DecodeMessages( Message.Data, RemapAddress );
+	
+		Pop.Debug(`OSC -> Websocket: ${JSON.stringify(OscValues)}`);
+		OscToWebsocketQueue.Resolve(OscValues);
+	}
+	catch(e)
+	{
+		Pop.Debug(e);
+	}
 }
 
 async function WebsocketServerLoop(GetListenPort,OnRecvMessage,WaitForSendMessage)
@@ -190,15 +338,28 @@ async function WebsocketServerLoop(GetListenPort,OnRecvMessage,WaitForSendMessag
 			//await Socket.WaitForConnect();
 			Pop.Debug(`Webocket listening ${Port}; from`, JSON.stringify(Socket.GetAddress()));
 			
+			
 			const SendLoop = async function()
 			{
 				while ( true )
 				{
-					const Message = await WaitForSendMessage();
+					let Message = await WaitForSendMessage();
+					if ( typeof Message != 'string' )
+						Message = JSON.stringify(Message);
 					const Peers = Socket.GetPeers();
+					Pop.Debug(`Sending ${Message} to Peers ${Peers}`);
 					function Send(Peer)
 					{
-						Socket.Send( Peer, Message );
+						try
+						{
+							const Type = typeof Message;
+							Pop.Debug(`Sending ${Message}(${Type}) to ${Peer}`);
+							Socket.Send( Peer, Message );
+						}
+						catch(e)
+						{
+							Pop.Debug(`Send error ${e}`);
+						}
 					}
 					Peers.forEach(Send);
 				}
@@ -346,21 +507,6 @@ async function UdpServerLoop(GetListenPort,OnRecvMessage,WaitForSendMessage)
 	}
 }
 
-
-function GetNextWebsocketPort()
-{
-	return 8080;
-}
-
-function GetNextUdpAddress()
-{
-	return ['localhost',9999];//63803];
-}
-
-function GetNextUdpPort()
-{
-	return 9999;
-}
 
 
 
